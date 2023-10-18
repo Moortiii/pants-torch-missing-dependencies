@@ -1,0 +1,23 @@
+[GLOBAL]
+pants_version = "2.17.0"
+pants_ignore_use_gitignore = false
+
+backend_packages = ["pants.backend.python"]
+
+[python-bootstrap]
+search_path = ["<PYENV>"]
+
+[python]
+enable_resolves = true
+pip_version = "23.0.1"
+interpreter_constraints = ['==3.11.3']
+default_resolve = "requirements"
+
+[python-infer]
+use_rust_parser = true
+
+[python.resolves]
+requirements = "3rdparty/python/requirements.lock"
+
+[source]
+root_patterns = ["src/python/my-package"]
